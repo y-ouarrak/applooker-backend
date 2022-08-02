@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipments",
+  "info": {
+    "singularName": "equipment",
+    "pluralName": "equipments",
+    "displayName": "equipment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "parking": {
+      "type": "boolean"
+    },
+    "ascenseur": {
+      "type": "boolean"
+    },
+    "balcon": {
+      "type": "boolean"
+    },
+    "ordinateur": {
+      "type": "boolean"
+    },
+    "playstation": {
+      "type": "boolean"
+    },
+    "internet": {
+      "type": "boolean"
+    },
+    "fer_a_repasser": {
+      "type": "boolean"
+    },
+    "climatisation": {
+      "type": "boolean"
+    },
+    "lave_vaisselle": {
+      "type": "boolean"
+    },
+    "seche_linge": {
+      "type": "boolean"
+    },
+    "machine_a_laver": {
+      "type": "boolean"
+    },
+    "cafetiere": {
+      "type": "boolean"
+    },
+    "micro_ondes": {
+      "type": "boolean"
+    },
+    "refrigerateur": {
+      "type": "boolean"
+    },
+    "cable_tv": {
+      "type": "boolean"
+    },
+    "cuisiniere": {
+      "type": "boolean"
+    },
+    "chauffe_eau": {
+      "type": "boolean"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "mappedBy": "equipment"
+    }
+  }
+}

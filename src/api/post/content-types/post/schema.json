@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "discreption": {
+      "type": "text"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "post"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "posts"
+    },
+    "post_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post-type.post-type",
+      "inversedBy": "posts"
+    },
+    "equipment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::equipment.equipment",
+      "inversedBy": "post"
+    },
+    "pieces": {
+      "type": "integer"
+    },
+    "salles_de_bain": {
+      "type": "integer"
+    },
+    "superficie": {
+      "type": "decimal"
+    },
+    "parking": {
+      "type": "boolean",
+      "default": false
+    },
+    "jardin": {
+      "type": "boolean",
+      "default": false
+    },
+    "garage": {
+      "type": "boolean",
+      "default": false
+    },
+    "piscine": {
+      "type": "boolean",
+      "default": false
+    },
+    "meubles": {
+      "type": "boolean",
+      "default": false
+    },
+    "lat": {
+      "type": "float"
+    },
+    "lng": {
+      "type": "float"
+    },
+    "visite": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::visite.visite",
+      "inversedBy": "post"
+    },
+    "approved_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "approved_posts"
+    }
+  }
+}

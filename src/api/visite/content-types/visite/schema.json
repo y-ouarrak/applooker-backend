@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "visites",
+  "info": {
+    "singularName": "visite",
+    "pluralName": "visites",
+    "displayName": "visite"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ip": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "visites"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post",
+      "mappedBy": "visite"
+    }
+  }
+}
